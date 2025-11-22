@@ -545,7 +545,7 @@ class get_months(formatter):
 			self.year = str(datetime.date.today().year)
 
 			if datetime.date.month <= 2:
-				print "using" + self.year + "to get the months. Might be wrong!"
+				print( "using" + self.year + "to get the months. Might be wrong!")
 
 		#for contstructing links
 		base = 'http://www.ndbc.noaa.gov/view_text_file.php?filename='
@@ -564,7 +564,7 @@ class get_months(formatter):
 
 			except:
 				print(str(month[ii]) + '2015' + ' not in records')
-				print link
+				print(link)
 
 			#need to try the second link
 			try: 
@@ -581,7 +581,7 @@ class get_months(formatter):
 		for L in links:
 			self.link=L
 			new_df = self.format_stand_meteo()
-			print 'Link : ' + L
+			print('Link : ' + L)
 			df = df.append(new_df)
 
 		return df
@@ -737,7 +737,7 @@ class makecall(get_historic,get_months):
 
 			except:
 				print(str(month[ii]) + '2015' + ' not in records')
-				print link
+				print(link)
 
 
 		# start grabbing some data
@@ -746,7 +746,7 @@ class makecall(get_historic,get_months):
 		for L in links:
 
 			new_df = self.get_stand_meteo(link=L)
-			print 'Link : ' + L
+			print('Link : ' + L)
 			df = df.append(new_df)
 
 		return df
